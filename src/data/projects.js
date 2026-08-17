@@ -80,8 +80,8 @@ export const projects = [
       "Desplegado en VPS propio (Hetzner) con Nginx, HTTPS y systemd; limpieza automática de archivos temporales cada 30 min",
     ],
     images: [
-      "/src/assets/img/pdf-tools-1.png",
-      "/src/assets/img/pdf-tools-2.png",
+      "/img/pdf-tools-1.png",
+      "/img/pdf-tools-2.png",
     ],
     github: null,
     demo: null,
