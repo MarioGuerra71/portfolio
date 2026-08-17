@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { projects, statusLabels } from "../data/projects";
+import ImageSlider from "../components/ImageSlider";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -15,7 +16,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
+    <main className="max-w-3xl mx-auto px-6 py-16" style={{ "--color-accent": project.color }}>
       <Link to="/" className="text-sm text-ink-soft hover:text-accent">← Volver a proyectos</Link>
 
       <div className="mt-6 flex items-center gap-3">
@@ -35,13 +36,7 @@ export default function ProjectDetail() {
         ))}
       </div>
 
-      {project.images.length > 0 && (
-        <div className="grid gap-4 mt-8">
-          {project.images.map((img) => (
-            <img key={img} src={img} alt={project.title} className="rounded-xl border border-border w-full" />
-          ))}
-        </div>
-      )}
+      <ImageSlider images={project.images} alt={project.title} />
 
       <p className="text-ink mt-8 leading-relaxed">{project.description}</p>
 

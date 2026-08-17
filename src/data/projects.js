@@ -1,6 +1,7 @@
 export const projects = [
   {
     id: "checkpoint",
+    color: "#7C3AED",
     title: "Checkpoint",
     tagline:
       "Red social para descubrir, valorar y hacer seguimiento de videojuegos",
@@ -15,12 +16,13 @@ export const projects = [
       "Sistema de gamificación: logros, monedas, sobres y tienda de objetos",
       "Autenticación con cookies + bcryptjs y rutas privadas protegidas por middleware",
     ],
-    images: [],
+    images: ["/img/checkpoint-1.png", "/img/checkpoint-2.png", "/img/checkpoint-3.png", "/img/checkpoint-4.png", "/img/checkpoint-5.png", "/img/checkpoint-6.png", "/img/checkpoint-7.png", "/img/checkpoint-8.png", "/img/checkpoint-9.png", "/img/checkpoint-10.png", "/img/checkpoint-11.png", "/img/checkpoint-12.png", "/img/checkpoint-13.png", "/img/checkpoint-14.png", "/img/checkpoint-15.png", "/img/checkpoint-16.png", "/img/checkpoint-17.png", "/img/checkpoint-18.png", "/img/checkpoint-19.png"],
     github: "https://github.com/MarioGuerra71/checkpoint",
     demo: null,
   },
   {
     id: "papo-roman",
+    color: "#B8860B",
     title: "Papo Román FS",
     tagline: "App de gestión integral para un club de fútbol sala amateur",
     stack: ["Flutter", "Firebase", "Cloud Firestore", "FCM"],
@@ -34,12 +36,13 @@ export const projects = [
       "Notificaciones push en tiempo real con arquitectura serverless propia",
       "Galería de fotos por partido vía Google Drive API e integración con Instagram",
     ],
-    images: [],
-    github: null,
+    images: ["/img/papo-roman-1.jpg", "/img/papo-roman-2.jpg", "/img/papo-roman-3.jpg", "/img/papo-roman-4.jpg", "/img/papo-roman-5.jpg", "/img/papo-roman-6.jpg", "/img/papo-roman-7.jpg", "/img/papo-roman-8.jpg", "/img/papo-roman-9.jpg"],
+    github: "https://github.com/MarioGuerra71/papo-roman-fs",
     demo: null,
   },
   {
     id: "cactus-nlp",
+    color: "#C2410C",
     title: "Cactus NLP",
     tagline: "Herramienta CAQDAS de análisis cualitativo de transcripciones",
     stack: ["Python", "Streamlit", "spaCy", "OpenAI API"],
@@ -52,12 +55,13 @@ export const projects = [
       "Codebooks asistidos por IA (GPT-4o-mini) con control explícito del usuario sobre qué datos se envían",
       "Exportación completa (Excel con heatmaps, CSV, PNG, TXT)",
     ],
-    images: [],
+    images: ["/img/nlp-1.png", "/img/nlp-2.png", "/img/nlp-3.png", "/img/nlp-4.png", "/img/nlp-5.png", "/img/nlp-6.png"],
     github: null,
     demo: null,
   },
   {
     id: "pdf-tools",
+    color: "#2563EB",
     title: "PDF Tools",
     tagline:
       "Herramientas de gestión de PDF sin depender de servicios externos",
