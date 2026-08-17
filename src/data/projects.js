@@ -79,10 +79,7 @@ export const projects = [
       "Borrado automático de metadatos en todos los documentos generados",
       "Desplegado en VPS propio (Hetzner) con Nginx, HTTPS y systemd; limpieza automática de archivos temporales cada 30 min",
     ],
-    images: [
-      "/img/pdf-tools-1.png",
-      "/img/pdf-tools-2.png",
-    ],
+    images: ["/img/pdf-tools-1.png", "/img/pdf-tools-2.png"],
     github: null,
     demo: null,
   },
