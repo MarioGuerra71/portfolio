@@ -19,7 +19,7 @@ export const projects = [
     ],
     images: ["/img/checkpoint-1.png", "/img/checkpoint-2.png", "/img/checkpoint-3.png", "/img/checkpoint-4.png", "/img/checkpoint-5.png", "/img/checkpoint-6.png", "/img/checkpoint-7.png", "/img/checkpoint-8.png", "/img/checkpoint-9.png", "/img/checkpoint-10.png", "/img/checkpoint-11.png", "/img/checkpoint-12.png", "/img/checkpoint-13.png", "/img/checkpoint-14.png", "/img/checkpoint-15.png", "/img/checkpoint-16.png", "/img/checkpoint-17.png", "/img/checkpoint-18.png", "/img/checkpoint-19.png"],
     github: "https://github.com/MarioGuerra71/checkpoint",
-    demo: null,
+    demo: "https://checkpoint-rho-indol.vercel.app/home",
   },
   {
     id: "papo-roman",
