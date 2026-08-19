@@ -3,6 +3,7 @@ export const projects = [
     id: "checkpoint",
     color: "#7C3AED",
     title: "Checkpoint",
+    category: "académico",
     tagline:
       "Red social para descubrir, valorar y hacer seguimiento de videojuegos",
     stack: ["Next.js", "React", "Tailwind CSS", "MySQL", "RAWG API"],
@@ -24,6 +25,7 @@ export const projects = [
     id: "papo-roman",
     color: "#B8860B",
     title: "Papo Román FS",
+    category: "producción",
     tagline: "App de gestión integral para un club de fútbol sala amateur",
     stack: ["Flutter", "Firebase", "Cloud Firestore", "FCM"],
     status: "producción",
@@ -44,6 +46,7 @@ export const projects = [
     id: "cactus-nlp",
     color: "#C2410C",
     title: "Cactus NLP",
+    category: "académico",
     tagline: "Herramienta CAQDAS de análisis cualitativo de transcripciones",
     stack: ["Python", "Streamlit", "spaCy", "OpenAI API"],
     status: "académico",
@@ -63,6 +66,7 @@ export const projects = [
     id: "pdf-tools",
     color: "#2563EB",
     title: "PDF Tools",
+    category: "producción",
     tagline:
       "Herramientas de gestión de PDF sin depender de servicios externos",
     stack: [
