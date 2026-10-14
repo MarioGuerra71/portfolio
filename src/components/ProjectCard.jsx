@@ -10,7 +10,9 @@ export default function ProjectCard({ project }) {
             src={project.images[0]}
             alt={project.title}
             loading="lazy"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover"
+            // qué parte de la captura se ve en la tarjeta (por defecto, arriba)
+            style={{ objectPosition: project.portada ?? "top" }}
           />
         ) : (
           "Captura pendiente"

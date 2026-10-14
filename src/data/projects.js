@@ -1,5 +1,30 @@
 export const projects = [
   {
+    id: "papo-roman",
+    color: "#B8975B",
+    title: "Papo Román FS",
+    category: "producción",
+    tagline: "App móvil para gestionar un club de fútbol sala real",
+    stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "FCM", "Vercel Serverless", "Firebase Hosting"],
+    status: "producción",
+    description:
+      "App Android y web (iPhone) que usa a diario un club de fútbol sala de Carmona con unos 40 socios. Cubre todo el día a día: partidos con marcador, goles, asistencias y convocatoria; estadísticas por jugador y por liga (Verano/Invierno) calculadas al vuelo desde los partidos; votación del MVP en dos fases y MVP de temporada; plantilla por edición, entrenadores con su balance, cara a cara contra cada rival, cuotas y gestión completa del club desde la propia app. Seguridad por roles con reglas de Firestore y notificaciones push a través de una función serverless propia que verifica el token del usuario. Todo en planes gratuitos: coste de mantenimiento 0 €.",
+    highlights: [
+      "Estadísticas derivadas de los partidos (sin contadores): editar o borrar un partido corrige todo solo",
+      "Votación MVP en dos fases con desempates, y MVP de temporada entre los más votados de la liga",
+      "Plantilla distinta por edición, ficha de jugador y de entrenador, y cara a cara contra cada rival",
+      "Gestión del club sin tocar Firebase: socios con roles, equipos, pabellones, patrocinadores y ediciones",
+      "Push seguras: función en Vercel que verifica el ID token de Firebase y exige rol de admin",
+      "Tema claro/oscuro, caché de imágenes y fotos optimizadas (de 18 MB a menos de 1 MB)",
+    ],
+    images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/img/papo-roman-demo-${n}.webp`),
+    github: null,
+    privado: true,
+    portada: "50% 16%", // el marcador del partido
+    demo: "https://paporoman-demo-mg.web.app",
+    demoNota: "Demo con datos ficticios: entra como visitante (eres admin) y toca lo que quieras.",
+  },
+  {
     id: "checkpoint",
     color: "#7C3AED",
     title: "Checkpoint",
@@ -20,30 +45,6 @@ export const projects = [
     images: ["/img/checkpoint-1.png", "/img/checkpoint-2.png", "/img/checkpoint-3.png", "/img/checkpoint-4.png", "/img/checkpoint-5.png", "/img/checkpoint-6.png", "/img/checkpoint-7.png", "/img/checkpoint-8.png", "/img/checkpoint-9.png", "/img/checkpoint-10.png", "/img/checkpoint-11.png", "/img/checkpoint-12.png", "/img/checkpoint-13.png", "/img/checkpoint-14.png", "/img/checkpoint-15.png", "/img/checkpoint-16.png", "/img/checkpoint-17.png", "/img/checkpoint-18.png", "/img/checkpoint-19.png"],
     github: "https://github.com/MarioGuerra71/checkpoint",
     demo: "https://checkpoint-rho-indol.vercel.app/home",
-  },
-  {
-    id: "papo-roman",
-    color: "#B8975B",
-    title: "Papo Román FS",
-    category: "producción",
-    tagline: "App móvil para gestionar un club de fútbol sala real",
-    stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "FCM", "Vercel Serverless", "Firebase Hosting"],
-    status: "producción",
-    description:
-      "App Android y web (iPhone) que usa a diario un club de fútbol sala de Carmona con unos 40 socios. Cubre todo el día a día: partidos con marcador, goles, asistencias y convocatoria; estadísticas por jugador y por liga (Verano/Invierno) calculadas al vuelo desde los partidos; votación del MVP en dos fases y MVP de temporada; plantilla por edición, entrenadores con su balance, cara a cara contra cada rival, cuotas y gestión completa del club desde la propia app. Seguridad por roles con reglas de Firestore y notificaciones push a través de una función serverless propia que verifica el token del usuario. Todo en planes gratuitos: coste de mantenimiento 0 €.",
-    highlights: [
-      "Estadísticas derivadas de los partidos (sin contadores): editar o borrar un partido corrige todo solo",
-      "Votación MVP en dos fases con desempates, y MVP de temporada entre los más votados de la liga",
-      "Plantilla distinta por edición, ficha de jugador y de entrenador, y cara a cara contra cada rival",
-      "Gestión del club sin tocar Firebase: socios con roles, equipos, pabellones, patrocinadores y ediciones",
-      "Push seguras: función en Vercel que verifica el ID token de Firebase y exige rol de admin",
-      "Tema claro/oscuro, caché de imágenes y fotos optimizadas (de 18 MB a menos de 1 MB)",
-    ],
-    images: [],
-    github: null,
-    privado: true,
-    demo: "https://paporoman-demo-mg.web.app",
-    demoNota: "Demo con datos ficticios: entra como visitante (eres admin) y toca lo que quieras.",
   },
   {
     id: "cactus-nlp",
@@ -101,3 +102,30 @@ export const statusLabels = {
   académico: "PROYECTO ACADÉMICO",
   privado: "PRIVADO",
 };
+
+// Experiencia profesional (misma que en el CV)
+export const experiencia = [
+  {
+    empresa: "CactusLab",
+    puesto: "Desarrollador Web (prácticas)",
+    lugar: "Carmona, Sevilla",
+    fechas: "Enero 2026 – Junio 2026",
+    puntos: [
+      "Desarrollo y mantenimiento de aplicaciones web internas para distintos procesos de la empresa.",
+      "Plataforma de email marketing con Mautic y AWS SES: envíos, gestión de rebotes y entregabilidad.",
+      "Configuración de SFTP, DNS, DKIM y dominios para poner en marcha los servicios de email.",
+      "Herramientas internas de gestión documental y edición colaborativa.",
+      "Despliegue y mantenimiento de aplicaciones web y APIs en servidores Linux.",
+    ],
+  },
+  {
+    empresa: "jesusmorales.net",
+    puesto: "Desarrollo web (apoyo)",
+    lugar: "",
+    fechas: "Enero 2025 – Febrero 2025",
+    puntos: [
+      "Diseño, desarrollo y mantenimiento de páginas web con WordPress.",
+      "Maquetación y configuración de sitios según las necesidades de cada proyecto.",
+    ],
+  },
+];

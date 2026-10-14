@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const links = [
   { href: "/#sobre-mi", label: "Sobre mí" },
+  { href: "/#experiencia", label: "Experiencia" },
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#stack", label: "Stack" },
   { href: "/#contacto", label: "Contacto" },

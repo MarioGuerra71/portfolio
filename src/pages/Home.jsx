@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { projects } from "../data/projects";
+import { projects, experiencia } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
 function FloatingChip({ text, className }) {
@@ -77,7 +77,11 @@ const stackGroups = [
   },
   {
     label: "Bases de datos",
-    items: ["MySQL / MariaDB", "Firebase / Firestore"],
+    items: ["MySQL", "MariaDB", "Firebase", "Cloud Firestore"],
+  },
+  {
+    label: "IA y NLP",
+    items: ["spaCy", "OpenAI API"],
   },
   {
     label: "DevOps y sistemas",
@@ -92,7 +96,47 @@ const stackGroups = [
       "Firebase Hosting",
     ],
   },
+  {
+    label: "Otras herramientas",
+    items: ["REST APIs", "WordPress", "Mautic", "AWS SES"],
+  },
 ];
+
+function ExperienciaSection() {
+  return (
+    <section id="experiencia" className="py-14 border-t border-border">
+      <h2 className="font-display text-xl font-bold text-ink mb-6">
+        Experiencia
+      </h2>
+      <ol className="space-y-8">
+        {experiencia.map((e) => (
+          <li
+            key={e.empresa}
+            className="relative pl-6 border-l border-border"
+          >
+            <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-accent" />
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 className="font-display text-lg font-bold text-ink">
+                {e.puesto} · <span className="text-accent">{e.empresa}</span>
+              </h3>
+              <span className="font-mono text-xs text-ink-soft">
+                {e.fechas}
+              </span>
+            </div>
+            {e.lugar && <p className="text-sm text-ink-soft">{e.lugar}</p>}
+            <ul className="mt-3 space-y-1.5">
+              {e.puntos.map((p) => (
+                <li key={p} className="flex gap-2 text-ink-soft text-sm">
+                  <span className="text-accent font-mono">›</span> {p}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
 
 function ProjectsSection() {
   const [filter, setFilter] = useState("todos");
@@ -272,7 +316,13 @@ export default function Home() {
             <p className="font-mono text-[11px] text-accent uppercase tracking-wide">
               Formación
             </p>
-            <p className="text-sm text-ink mt-1">Técnico Superior en DAW</p>
+            <p className="text-sm text-ink mt-1">
+              Técnico Superior en DAW (2024 – 2026)
+            </p>
+            <p className="text-xs text-ink-soft">
+              I.E.S. Cristóbal de Monroy · antes, Ing. Informática de
+              Computadores (US, parcial)
+            </p>
           </div>
           <div>
             <p className="font-mono text-[11px] text-accent uppercase tracking-wide">
@@ -286,7 +336,7 @@ export default function Home() {
             <p className="font-mono text-[11px] text-accent uppercase tracking-wide">
               Ubicación
             </p>
-            <p className="text-sm text-ink mt-1">Sevilla, España</p>
+            <p className="text-sm text-ink mt-1">Carmona (Sevilla)</p>
           </div>
           <div>
             <p className="font-mono text-[11px] text-accent uppercase tracking-wide">
@@ -307,6 +357,7 @@ export default function Home() {
         </aside>
       </section>
 
+      <ExperienciaSection />
       <ProjectsSection />
       <StackSection />
 
