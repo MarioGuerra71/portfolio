@@ -50,18 +50,36 @@ export default function ProjectDetail() {
         </ul>
       )}
 
-      <div className="flex gap-4 mt-8">
+      <div className="flex flex-wrap items-center gap-4 mt-8">
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold px-5 py-2.5 rounded-full bg-accent text-bg hover:opacity-90 transition-opacity"
+          >
+            Probar la demo →
+          </a>
+        )}
         {project.github && (
-          <a href={project.github} target="_blank" className="text-sm font-medium text-ink hover:text-accent">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-ink hover:text-accent"
+          >
             Ver código →
           </a>
         )}
-        {project.demo && (
-          <a href={project.demo} target="_blank" className="text-sm font-medium text-ink hover:text-accent">
-            Ver demo →
-          </a>
+        {project.privado && (
+          <span className="text-sm text-ink-soft">
+            Código privado · disponible bajo petición
+          </span>
         )}
       </div>
+      {project.demoNota && (
+        <p className="text-xs text-ink-soft mt-3">{project.demoNota}</p>
+      )}
     </main>
   );
 }

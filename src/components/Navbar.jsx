@@ -1,10 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const links = [
-  { href: "#sobre-mi", label: "Sobre mí" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#stack", label: "Stack" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#sobre-mi", label: "Sobre mí" },
+  { href: "/#proyectos", label: "Proyectos" },
+  { href: "/#stack", label: "Stack" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -26,8 +26,8 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          href="#contacto"
-          className="text-sm font-medium px-4 py-2 rounded-full bg-accent text-white hover:opacity-90 transition-opacity"
+          href="/#contacto"
+          className="text-sm font-medium px-4 py-2 rounded-full bg-accent text-bg hover:opacity-90 transition-opacity"
         >
           Contactar
         </a>

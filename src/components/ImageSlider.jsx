@@ -20,14 +20,14 @@ export default function ImageSlider({ images, alt }) {
             <button
               onClick={prev}
               aria-label="Anterior"
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-border flex items-center justify-center text-ink hover:text-accent shadow-sm"
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface/90 border border-border flex items-center justify-center text-ink text-xl hover:text-accent shadow-sm"
             >
               ‹
             </button>
             <button
               onClick={next}
               aria-label="Siguiente"
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-border flex items-center justify-center text-ink hover:text-accent shadow-sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface/90 border border-border flex items-center justify-center text-ink text-xl hover:text-accent shadow-sm"
             >
               ›
             </button>
@@ -48,7 +48,7 @@ export default function ImageSlider({ images, alt }) {
                 i === index ? "border-accent" : "border-border"
               }`}
             >
-              <img src={img} alt="" className="w-full h-full object-cover" />
+              <img src={img} alt="" loading="lazy" className="w-full h-full object-cover object-top" />
             </button>
           ))}
         </div>

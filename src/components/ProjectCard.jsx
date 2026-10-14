@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { statusLabels } from "../data/projects";
 
 export default function ProjectCard({ project }) {
@@ -8,7 +9,8 @@ export default function ProjectCard({ project }) {
           <img
             src={project.images[0]}
             alt={project.title}
-            className="w-full h-full object-cover"
+            loading="lazy"
+            className="w-full h-full object-cover object-top"
           />
         ) : (
           "Captura pendiente"
@@ -34,12 +36,24 @@ export default function ProjectCard({ project }) {
             </span>
           ))}
         </div>
-        <a
-          href={`/proyectos/${project.id}`}
-          className="text-sm font-medium text-ink hover:text-accent"
-        >
-          Ver detalle →
-        </a>
+        <div className="flex items-center gap-4">
+          <Link
+            to={`/proyectos/${project.id}`}
+            className="text-sm font-medium text-ink hover:text-accent"
+          >
+            Ver detalle →
+          </Link>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-accent hover:underline"
+            >
+              Demo ↗
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
