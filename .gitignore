@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Borradores locales (no publicar)
+CV_Mario_Guerra.pdf

@@ -36,6 +36,19 @@ export default function ProjectDetail() {
         ))}
       </div>
 
+      {/* Vídeo corto opcional (project.video = "/video/x.mp4"): se reproduce solo y sin sonido */}
+      {project.video && (
+        <video
+          src={project.video}
+          className="mt-8 w-full max-h-[560px] rounded-xl border border-border bg-bg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        />
+      )}
+
       <ImageSlider images={project.images} alt={project.title} />
 
       <p className="text-ink mt-8 leading-relaxed">{project.description}</p>

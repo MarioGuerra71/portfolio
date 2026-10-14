@@ -6,7 +6,7 @@ export const projects = [
     category: "académico",
     tagline:
       "Red social para descubrir, valorar y hacer seguimiento de videojuegos",
-    stack: ["Next.js", "React", "Tailwind CSS", "MySQL", "RAWG API"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MySQL", "REST API", "RAWG API"],
     status: "académico",
     description:
       "Plataforma social inspirada en Letterboxd/Backloggd pero orientada a videojuegos. Los usuarios descubren juegos vía la API de RAWG, escriben reseñas, registran sesiones de juego, crean listas y siguen a otros usuarios. Incluye un sistema de gamificación propio con logros, monedas, sobres, tienda de objetos e inventario de personalización (avatares y bordes).",
