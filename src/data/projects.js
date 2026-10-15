@@ -42,7 +42,7 @@ export const projects = [
       "Arquitectura por capas (route handlers → servicios → dominio puro → repositorios Prisma)",
       "134 tests unitarios, 75 de integración contra PostgreSQL real y E2E con Playwright en el CI",
     ],
-    images: [2, 1, 3, 4].map((n) => `/img/comicverse-${n}.webp`),
+    images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/img/comicverse-${n}.webp`),
     github: "https://github.com/MarioGuerra71/comicverse",
     demo: "https://comicverse-eight.vercel.app",
     demoNota: "Pulsa «Probar la demo»: entras sin registrarte en una cuenta propia con cómics ya leídos. Marca otro como leído para ver cómo se entintan sus personajes.",
