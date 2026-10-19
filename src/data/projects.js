@@ -33,14 +33,14 @@ export const projects = [
     stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Better Auth", "Zod", "Vitest", "Playwright", "Vercel Cron", "Comic Vine API"],
     status: "producción",
     description:
-      "Biblioteca personal de cómics de Marvel y DC en la que tu colección empieza «a lápiz» y se va entintando a medida que lees. Al marcar un cómic como leído se descubren sus personajes, y al leer 5 cómics de uno pasa a estar coleccionado. Los personajes se guardan en álbumes de cartas con fundas 3×3, páginas que se pasan en 3D y cartas con brillo holográfico. Las relaciones (aliados, enemigos, familia…) se descubren al conocer a los dos personajes. El catálogo crece bajo demanda desde Comic Vine y un cron diario trae las novedades. Incluye logros, perfiles públicos, seguir a otros lectores y comparar álbumes sin spoilers.",
+      "Biblioteca personal de cómics de Marvel y DC en la que tu colección empieza «a lápiz» y se va entintando a medida que lees. Al marcar un cómic como leído se descubren sus personajes, y al leer 5 cómics de uno pasa a estar coleccionado. Los personajes se guardan en álbumes de cartas con fundas 3×3, páginas que se pasan en 3D y cartas con brillo holográfico. Las relaciones (aliados, enemigos, familia…) se descubren al conocer a los dos personajes. El catálogo crece bajo demanda desde Comic Vine y un cron diario trae las novedades. La biblioteca se puede ver por series, como carpetas, y cada lector elige la imagen de cada versión de un personaje (el Batman de Absolute Batman no es el de siempre). Incluye logros, perfiles públicos, seguir a otros lectores y comparar álbumes sin spoilers.",
     highlights: [
       "Sin spoilers por diseño: de un personaje no descubierto al navegador solo le llega su número; su ficha da el mismo 404 que uno inexistente",
       "Los desbloqueos se calculan con una consulta indexada, no se guardan: sin estado duplicado ni carreras",
       "Relaciones derivadas de coapariciones con el coeficiente de Ochiai, combinadas con relaciones curadas",
       "Importación idempotente y bajo demanda desde Comic Vine respetando su límite de 200 peticiones/hora",
       "Arquitectura por capas (route handlers → servicios → dominio puro → repositorios Prisma)",
-      "134 tests unitarios, 75 de integración contra PostgreSQL real y E2E con Playwright en el CI",
+      "149 tests unitarios, 86 de integración contra PostgreSQL real y E2E con Playwright en el CI",
     ],
     images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/img/comicverse-${n}.webp`),
     github: "https://github.com/MarioGuerra71/comicverse",
