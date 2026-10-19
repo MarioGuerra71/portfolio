@@ -124,6 +124,7 @@ export const statusLabels = {
   producción: "EN PRODUCCIÓN",
   académico: "PROYECTO ACADÉMICO",
   privado: "PRIVADO",
+  maqueta: "MAQUETA",
 };
 
 // Experiencia profesional (misma que en el CV)
@@ -153,39 +154,89 @@ export const experiencia = [
   },
 ];
 
-// Maquetas: webs de demostración para empresas ficticias (diseño y front-end)
+// Maquetas: webs de demostración para empresas ficticias (diseño, front-end y buenas prácticas)
+const capturas = (id, n) => Array.from({ length: n }, (_, i) => `/img/maquetas/${id}-${i + 1}.webp`);
+
 export const maquetas = [
   {
     id: "brasa-olivo",
+    color: "#D4B48A",
     title: "Brasa & Olivo",
     tipo: "Restaurante",
+    status: "maqueta",
     imagen: "/img/maqueta-brasa.webp",
     alt: "Portada de la web Brasa & Olivo: título en Bodoni, aviso de horario y foto de chuletas sobre la brasa",
-    descripcion:
+    tagline: "Web de un asador ficticio de Carmona que cambia según la hora real",
+    resumen:
       "Web de un asador ficticio de Carmona: la portada cambia según la hora real (menú del día, cena o cerrado), carta con filtro de los 14 alérgenos y reserva en cuatro pasos con validación.",
-    stack: ["Astro", "CSS", "CSP con hashes", "node --test"],
+    description:
+      "Maqueta de la web que encargaría un restaurante local: un asador de brasa de encina con aceite de su propio olivar. El diseño es un cartel impreso y sobrio en blanco, negro, madera y oliva, con letra Didone y fotos «impresas» en dos pasadas de tinta. La portada lee la hora de Madrid y anuncia el menú del día, la brasa de la noche o cuándo vuelve a abrir. Incluye la carta completa con filtro de alérgenos, el menú del día, horario, mapa bajo demanda y una reserva por pasos que valida días de cierre, turnos y horas pasadas.",
+    highlights: [
+      "Portada que sigue la hora real de Carmona (Europe/Madrid), aunque el móvil del visitante esté en otra zona horaria",
+      "Carta con filtro de los 14 alérgenos de la UE, indicados con texto y no solo con iconos",
+      "Reserva en cuatro estaciones (día, hora, personas, datos) con validación: lunes cerrado, cenas de jueves a sábado y horas pasadas bloqueadas",
+      "Mapa de OpenStreetMap que no carga nada externo hasta que el visitante lo pide",
+      "CSP con hashes generada por Astro, sin 'unsafe-inline', y cabeceras de seguridad en Vercel",
+      "Fotos optimizadas a AVIF/WebP en varios tamaños; Lighthouse 100 en accesibilidad, buenas prácticas y SEO",
+    ],
+    stack: ["Astro 7", "HTML", "CSS", "JavaScript", "Astro Assets (AVIF/WebP)", "Fontsource", "OpenStreetMap", "node --test", "Vercel"],
+    images: capturas("brasa", 6),
+    github: "https://github.com/MarioGuerra71/brasa-olivo",
     demo: "https://brasa-olivo-xi.vercel.app",
+    demoNota: "Restaurante ficticio: carta, precios, horario y dirección son inventados. La reserva es simulada y no envía nada.",
   },
   {
     id: "terra",
+    color: "#A9B89A",
     title: "Terra",
     tipo: "Tienda online",
+    status: "maqueta",
     imagen: "/img/maqueta-terra.webp",
     alt: "Portada de la tienda Terra: titular sobre fondo color barro y una bola de barro en 3D sobre el torno",
-    descripcion:
+    tagline: "Tienda de cerámica con una historia en 3D al estilo de las páginas de Apple",
+    resumen:
       "Tienda de cerámica con una historia en 3D al hacer scroll: un jarrón se tornea, se esmalta y se cuece mientras bajas. Debajo, una tienda completa con filtros en la URL, carrito y checkout simulado.",
-    stack: ["React", "Three.js", "Tailwind CSS", "Vite"],
+    description:
+      "Tienda online de un taller de cerámica ficticio. Al hacer scroll, un jarrón en 3D real se modela como en un torno de alfarero: empieza siendo una bola de barro amasada, sube las paredes, coge forma, se esmalta en el color que elige el visitante, se pone incandescente en el horno y se posa en una peana donde empieza la tienda. Cada fase cambia el fondo de la página. Debajo hay una tienda funcional: catálogo con filtros guardados en la URL, ficha de producto con formatos, carrito persistente y checkout en tres pasos con el pago simulado.",
+    highlights: [
+      "Jarrón en Three.js como superficie de revolución (LatheGeometry): el perfil se interpola entre las fases del torno al hacer scroll",
+      "El esmalte elegido en la historia cambia el jarrón al momento y filtra el catálogo por ese esmalte",
+      "Three.js se carga bajo demanda (import dinámico): la primera pantalla pinta en menos de 1 s con CPU ×4 y 4G",
+      "Carrito en localStorage validado al leerlo (cualquiera puede manipularlo) y precios en céntimos",
+      "Checkout en tres pasos con validación, envío gratis desde 80 € y pago simulado sin ningún campo de tarjeta",
+      "Con «reducir movimiento» el jarrón aparece terminado y quieto; diálogos nativos (<dialog>) con foco atrapado; Lighthouse 100",
+    ],
+    stack: ["React 19", "Vite 8", "Tailwind CSS 4", "Three.js", "JavaScript", "CSS scroll-driven animations", "localStorage", "node --test", "Vercel"],
+    images: capturas("terra", 8),
+    github: "https://github.com/MarioGuerra71/terra-ceramica",
     demo: "https://terra-ceramica.vercel.app",
+    demoNota: "Tienda ficticia: baja despacio para ver el jarrón tornearse, elige un esmalte y prueba el carrito. El pago es simulado.",
   },
   {
     id: "norte-estudio",
+    color: "#D99A7C",
     title: "Norte Estudio",
     tipo: "Estudio de arquitectura",
+    status: "maqueta",
     imagen: "/img/maqueta-norte.webp",
     alt: "Portada de la web Norte Estudio: titular sobrio sobre fondo claro y fotografía de arquitectura blanca",
-    descripcion:
+    tagline: "Web editorial y multipágina de un estudio de arquitectura ficticio",
+    resumen:
       "Web editorial de un estudio de arquitectura ficticio: varias páginas con transiciones nativas del navegador (la foto de cada obra viaja a su página), índice con vista previa solo con CSS y ficha técnica por proyecto.",
-    stack: ["Astro", "View Transitions", "CSS scroll-driven"],
+    description:
+      "Web de un estudio de arquitectura de Sevilla planteada como una monografía: fondo de cal, texto grafito y un único acento color ladrillo para los estados. Son varias páginas estáticas (portada, índice, una página por obra, estudio y contacto) unidas por transiciones nativas del navegador: la foto de un proyecto en el índice se transforma en la portada de su página, sin librerías. El índice muestra la foto de cada obra al pasar el ratón o el foco, solo con CSS, y cada proyecto tiene su ficha técnica, galería y navegación al anterior y siguiente.",
+    highlights: [
+      "View Transitions entre documentos (@view-transition): la foto de cada obra «viaja» del índice a su página, sin JavaScript",
+      "Una página estática por proyecto generada con getStaticPaths, con ficha técnica, galería y anterior/siguiente",
+      "Índice tipográfico con vista previa en CSS puro al pasar el ratón o el foco; miniaturas en móvil",
+      "Animaciones de scroll nativas (animation-timeline: view()) que se desactivan con «reducir movimiento»",
+      "Formulario de contacto con validación, foco en el primer error y contraste AA también en los bordes de los campos",
+      "CSP con hashes, URLs limpias y canonical correctos; Lighthouse 100 en accesibilidad, buenas prácticas y SEO",
+    ],
+    stack: ["Astro 7", "HTML", "CSS", "View Transitions API", "CSS scroll-driven animations", "JavaScript", "Astro Assets (AVIF/WebP)", "node --test", "Vercel"],
+    images: capturas("norte", 7),
+    github: "https://github.com/MarioGuerra71/norte-estudio",
     demo: "https://norte-estudio-gamma.vercel.app",
+    demoNota: "Estudio ficticio: proyectos, personas y datos son inventados, y las fotos de Unsplash muestran edificios sin relación. Abre el índice y entra en un proyecto para ver la transición.",
   },
 ];

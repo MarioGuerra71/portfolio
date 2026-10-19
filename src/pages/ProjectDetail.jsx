@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { projects, statusLabels } from "../data/projects";
+import { projects, maquetas, statusLabels } from "../data/projects";
 import ImageSlider from "../components/ImageSlider";
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = projects.find((p) => p.id === id);
+  const project = [...projects, ...maquetas].find((p) => p.id === id);
 
   if (!project) {
     return (
@@ -17,7 +17,9 @@ export default function ProjectDetail() {
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-16" style={{ "--color-accent": project.color }}>
-      <Link to="/" className="text-sm text-ink-soft hover:text-accent">← Volver a proyectos</Link>
+      <Link to={project.status === "maqueta" ? "/#maquetas" : "/#proyectos"} className="text-sm text-ink-soft hover:text-accent">
+        ← Volver a {project.status === "maqueta" ? "maquetas" : "proyectos"}
+      </Link>
 
       <div className="mt-6 flex items-center gap-3">
         <span className="font-mono text-[11px] tracking-wide text-accent px-2 py-1 rounded-full border border-accent/30">

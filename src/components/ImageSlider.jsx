@@ -13,7 +13,8 @@ export default function ImageSlider({ images, alt }) {
         <img
           src={images[index]}
           alt={`${alt} - captura ${index + 1}`}
-          className="w-full max-h-[520px] object-contain"
+          // Alto fijo: la página no "salta" al cargar capturas de distinto tamaño
+          className="w-full h-[min(520px,62vw)] object-contain"
         />
         {images.length > 1 && (
           <>
@@ -44,6 +45,8 @@ export default function ImageSlider({ images, alt }) {
             <button
               key={img}
               onClick={() => setIndex(i)}
+              aria-label={`Ver captura ${i + 1} de ${images.length}`}
+              aria-pressed={i === index}
               className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 ${
                 i === index ? "border-accent" : "border-border"
               }`}

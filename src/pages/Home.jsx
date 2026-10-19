@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { projects, experiencia, maquetas } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
@@ -69,6 +70,8 @@ const stackGroups = [
       "CSS",
       "Tailwind CSS",
       "Vite",
+      "Astro",
+      "Three.js",
     ],
   },
   {
@@ -226,10 +229,10 @@ function MaquetasSection() {
                 </h3>
               </div>
               <p className="text-sm text-ink-soft leading-relaxed">
-                {m.descripcion}
+                {m.resumen}
               </p>
               <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
-                {m.stack.map((t) => (
+                {m.stack.slice(0, 4).map((t) => (
                   <span
                     key={t}
                     className="font-mono text-[11px] px-2 py-0.5 rounded bg-bg text-ink-soft border border-border"
@@ -238,14 +241,30 @@ function MaquetasSection() {
                   </span>
                 ))}
               </div>
-              <a
-                href={m.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-accent hover:underline underline-offset-4 w-fit"
-              >
-                Ver la web →<span className="sr-only"> {m.title} (se abre en una pestaña nueva)</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <Link
+                  to={`/proyectos/${m.id}`}
+                  className="text-sm font-medium text-ink hover:text-accent"
+                >
+                  Ver detalle →<span className="sr-only"> de {m.title}</span>
+                </Link>
+                <a
+                  href={m.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-accent hover:underline underline-offset-4"
+                >
+                  Demo ↗<span className="sr-only"> de {m.title} (se abre en una pestaña nueva)</span>
+                </a>
+                <a
+                  href={m.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-ink-soft hover:text-accent"
+                >
+                  Código ↗<span className="sr-only"> de {m.title} en GitHub (se abre en una pestaña nueva)</span>
+                </a>
+              </div>
             </div>
           </article>
         ))}
