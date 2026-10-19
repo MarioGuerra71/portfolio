@@ -152,3 +152,40 @@ export const experiencia = [
     ],
   },
 ];
+
+// Maquetas: webs de demostración para empresas ficticias (diseño y front-end)
+export const maquetas = [
+  {
+    id: "brasa-olivo",
+    title: "Brasa & Olivo",
+    tipo: "Restaurante",
+    imagen: "/img/maqueta-brasa.webp",
+    alt: "Portada de la web Brasa & Olivo: título en Bodoni, aviso de horario y foto de chuletas sobre la brasa",
+    descripcion:
+      "Web de un asador ficticio de Carmona: la portada cambia según la hora real (menú del día, cena o cerrado), carta con filtro de los 14 alérgenos y reserva en cuatro pasos con validación.",
+    stack: ["Astro", "CSS", "CSP con hashes", "node --test"],
+    demo: "https://brasa-olivo-xi.vercel.app",
+  },
+  {
+    id: "terra",
+    title: "Terra",
+    tipo: "Tienda online",
+    imagen: "/img/maqueta-terra.webp",
+    alt: "Portada de la tienda Terra: titular sobre fondo color barro y una bola de barro en 3D sobre el torno",
+    descripcion:
+      "Tienda de cerámica con una historia en 3D al hacer scroll: un jarrón se tornea, se esmalta y se cuece mientras bajas. Debajo, una tienda completa con filtros en la URL, carrito y checkout simulado.",
+    stack: ["React", "Three.js", "Tailwind CSS", "Vite"],
+    demo: "https://terra-ceramica.vercel.app",
+  },
+  {
+    id: "norte-estudio",
+    title: "Norte Estudio",
+    tipo: "Estudio de arquitectura",
+    imagen: "/img/maqueta-norte.webp",
+    alt: "Portada de la web Norte Estudio: titular sobrio sobre fondo claro y fotografía de arquitectura blanca",
+    descripcion:
+      "Web editorial de un estudio de arquitectura ficticio: varias páginas con transiciones nativas del navegador (la foto de cada obra viaja a su página), índice con vista previa solo con CSS y ficha técnica por proyecto.",
+    stack: ["Astro", "View Transitions", "CSS scroll-driven"],
+    demo: "https://norte-estudio-gamma.vercel.app",
+  },
+];

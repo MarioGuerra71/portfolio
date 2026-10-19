@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { projects, experiencia } from "../data/projects";
+import { projects, experiencia, maquetas } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
 function FloatingChip({ text, className }) {
@@ -175,6 +175,79 @@ function ProjectsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {filtered.map((p) => (
           <ProjectCard key={p.id} project={p} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function MaquetasSection() {
+  return (
+    <section id="maquetas" className="py-14 border-t border-border">
+      <h2 className="font-display text-xl font-bold text-ink mb-2">
+        Maquetas
+      </h2>
+      <p className="text-ink-soft mb-8 max-w-2xl">
+        Webs de demostración para empresas ficticias, pensadas para enseñar
+        diseño y front-end: cada una con su propio estilo, accesibilidad AA y
+        100 en Lighthouse (accesibilidad, buenas prácticas y SEO).
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {maquetas.map((m) => (
+          <article
+            key={m.id}
+            className="group rounded-2xl border border-border bg-surface overflow-hidden flex flex-col"
+          >
+            <a
+              href={m.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="block aspect-16/10 overflow-hidden bg-bg"
+            >
+              <img
+                src={m.imagen}
+                alt=""
+                width="1200"
+                height="750"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </a>
+            <div className="p-5 flex flex-col gap-3 flex-1">
+              <div>
+                <p className="font-mono text-[11px] text-accent uppercase tracking-wide">
+                  {m.tipo}
+                </p>
+                <h3 className="font-display text-lg font-bold text-ink mt-1">
+                  {m.title}
+                </h3>
+              </div>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                {m.descripcion}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+                {m.stack.map((t) => (
+                  <span
+                    key={t}
+                    className="font-mono text-[11px] px-2 py-0.5 rounded bg-bg text-ink-soft border border-border"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={m.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-accent hover:underline underline-offset-4 w-fit"
+              >
+                Ver la web →<span className="sr-only"> {m.title} (se abre en una pestaña nueva)</span>
+              </a>
+            </div>
+          </article>
         ))}
       </div>
     </section>
@@ -359,6 +432,7 @@ export default function Home() {
 
       <ExperienciaSection />
       <ProjectsSection />
+      <MaquetasSection />
       <StackSection />
 
       <section id="contacto" className="py-14 border-t border-border">
